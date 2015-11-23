@@ -4,17 +4,15 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-A=$1
-B=$2
-HAMMING=0
-
-if [ ${#A} -ne ${#B} ]; then
+if [ ${#1} -ne ${#2} ]; then
     echo "The two strands must have the same length."
     exit 1
 fi
 
-for ((i=0; i<${#A}; i++)); do
-    [ ${A:i:1} == ${B:i:1} ] || let "HAMMING++"
+HAMMING=0
+
+for ((i=0; i<${#1}; i++)); do
+    [ ${1:i:1} == ${2:i:1} ] || let "HAMMING++"
 done
 
 echo "$HAMMING"
