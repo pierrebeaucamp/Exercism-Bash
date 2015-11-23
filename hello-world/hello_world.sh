@@ -1,9 +1,3 @@
 #!/bin/bash
-
-NAME="World"
-
-if [ $# -ne 0 ]; then
-    NAME=$@
-fi
-
+[ $# -eq 0 ] && NAME="World" || NAME=$@
 echo "Hello, $NAME!"
